@@ -1,4 +1,4 @@
-# C++ Project Template
+# C++ Template
 
 ## Prerequisites
 
@@ -19,6 +19,12 @@ Run tests
 
 ```bash
 ./cpp-template-tests
+```
+
+Run benchmarks
+
+```bash
+./cpp-template-benchmarks
 ```
 
 ## Kudos

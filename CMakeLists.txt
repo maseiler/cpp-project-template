@@ -37,6 +37,22 @@ add_executable(${PROJECT_NAME}-tests
 target_link_libraries(${PROJECT_NAME}-tests
         PRIVATE gtest_main ${PROJECT_NAME}::${PROJECT_NAME})
 
+# Google Benchmark
+###################################
+set(BENCHMARK_ENABLE_TESTING off)
+FetchContent_Declare(
+        googlebenchmark
+        GIT_REPOSITORY https://github.com/google/benchmark.git
+        GIT_TAG v1.8.3)
+
+FetchContent_MakeAvailable(googlebenchmark)
+
+add_executable(${PROJECT_NAME}-benchmarks
+        benchmarks/MyClassBenchmark.cpp)
+
+target_link_libraries(${PROJECT_NAME}-benchmarks
+        PRIVATE benchmark::benchmark ${PROJECT_NAME}::${PROJECT_NAME})
+
 
 #####################################################################
 # Libraries
